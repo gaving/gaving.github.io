@@ -1,10 +1,10 @@
 # Site settings
-title:       brokentrain
+title:       gavin.coffee
 email:       gavin.gilmour@gmail.com
 author:      Gavin Gilmour
 description: "personal blog"
 baseurl:     ""
-url:         "http://brokentrain.net"
+url:         "http://gavin.coffee"
 
 # Google analytics
 google_analytics:
