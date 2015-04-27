@@ -1,5 +1,5 @@
 # Site settings
-title:       gavin.coffee
+title:       Gavin Gilmour
 email:       gavin.gilmour@gmail.com
 author:      Gavin Gilmour
 description: "personal blog"
@@ -19,12 +19,12 @@ show_post_footers:  false
 disqus_shortname:
 
 # Social icons
-show_social_icons: false
-github_username:
-stackoverflow_id:
-twitter_username:
+show_social_icons: true
+github_username: gaving
+stackoverflow_id: 126893
+twitter_username: vesech
 google_plus_id:
-linkedin_username:
+linkedin_username: gilmourgavin
 bitcoin_url:
 paypal_url:
 flattr_button:
