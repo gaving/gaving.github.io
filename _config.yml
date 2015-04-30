@@ -7,7 +7,7 @@ baseurl:     ""
 url:         "http://gavin.coffee"
 
 # Google analytics
-google_analytics:
+google_analytics: UA-62444886-1
 
 # Optional features
 animated:           false
