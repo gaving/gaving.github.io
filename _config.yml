@@ -5,6 +5,7 @@ author:      Gavin Gilmour
 description: "personal blog"
 baseurl:     ""
 url:         "http://gavin.coffee"
+future: true
 
 # Google analytics
 google_analytics: UA-62444886-1
