@@ -1,12 +1,12 @@
 ---
 layout:     post
-title:      face recognition with deep detect (part 1)
+title:      Face Recognition with Deep Detect (Part 1)
 date:       2017-11-04 12:40:00
 ---
 
 ***This is part 1 of a 3 part series.***
 
-# Introduction
+## Introduction
 
 Deepdetect (DD) is a open source deep-learning server and API designed to help
 in bridging the gap toward machine learning as a commodity. It originates from
@@ -21,7 +21,7 @@ This short tutorial aims to show how to provide a service an image and return
 the nearest probabilities of a match from that input, setting up your own
 facial recognition server with DD.
 
-# Set up DD
+## Set up DD
 
 First of all, pull & run a DD container using Docker:-
 
@@ -31,7 +31,7 @@ docker run -p 8080:8080 --name dd beniz/deepdetect_cpu
 
 This should take a few minutes to download and run.
 
-# Download Classification Model
+## Download Classification Model
 
 Download the Visual Geometry Group's [face
 descriptors](http://www.robots.ox.ac.uk/~vgg/software/vgg_face/) ([direct
@@ -44,7 +44,7 @@ in images, videos, etc) are evaluated evaluated on the [Labeled Faces in the
 Wild](http://vis-www.cs.umass.edu/lfw/) dataset, a standard de facto for
 measuring face recognition performances.
 
-# Install Classification Model
+## Install Classification Model
 
 Extract the face descriptors to a directory:-
 
@@ -59,7 +59,7 @@ total 564M
 -rw-r--r-- 1 gavin  37K Oct 13  2015 names.txt
 ```
 
-## Replace `deploy.prototxt` file
+### Replace `deploy.prototxt` file
 
 According to [this issue](https://github.com/beniz/deepdetect/issues/92) the
 `VGG_FACE_deploy.prototxt` file (i.e. definition of input blobs) is based on an
@@ -68,7 +68,7 @@ older version of caffe which has to be updated for DD, thus download
 https://gist.github.com/gaving/e019bc737af14fd0bd950908312c4319) and overwrite
 `VGG_FACE_deploy.prototxt` within your extracted directory.
 
-## Create `corresp.txt` file
+### Create `corresp.txt` file
 
 DD requires a correspondance file to turn vgg_face categories, such as ‘1014'
 into textual categories such as 'Tommy Flanagan'. When training a model with
@@ -93,7 +93,7 @@ total 564M
 -rw-r--r-- 1 gavin  37K Oct 13  2015 names.txt
 ```
 
-## Copy to container
+### Copy to container
 
 Now we're ready to copy this directory to the running DD container instance
 `/opt/models/` folder like so:-
@@ -121,7 +121,7 @@ drwxr-xr-x  2 dd   dd   4096 Nov  1 18:42 vgg_face_caffe
 dd@30109d227487:/opt/models$
 ```
 
-# Create Classification Service
+## Create Classification Service
 
 The next step is to create the new classifcation service for DD by issuing the
 following request to the running DD instance:-
@@ -155,7 +155,7 @@ This should then output:-
 {"status":{"code":201,"msg":"Created"}}
 ```
 
-# Providing Inputs
+## Providing Inputs
 
 We're now ready to provide an input to our service. Let's try and identifiy an
 image of Jeff Goldblum:-
@@ -225,7 +225,7 @@ image indeed being that of Jeff Goldblum.
 
 ***Next time on part 2: fine tuning vgg_face for your own dataset***
 
-# Resources
+## Resources
 
 * https://www.elastic.co/blog/categorizing-images-with-deep-learning-into-elasticsearch
 
