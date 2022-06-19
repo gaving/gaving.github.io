@@ -1,10 +1,8 @@
 ---
 layout:     post
-title:      Face Recognition with DeepDetect (Part 1)
+title:      Face Recognition with DeepDetect
 date:       2017-11-04 12:40:00
 ---
-
-***This is part 1 of a 3 part series.***
 
 ## Introduction
 
@@ -223,8 +221,6 @@ Piped into [jq](https://github.com/stedolan/jq) for a nicer response:-
 
 As you can see from the output above, there is around a 70% chance of the
 input image indeed being that of Jeff Goldblum.
-
-**Next time on part 2: building an interface for classifying images.**
 
 ## Resources
 
